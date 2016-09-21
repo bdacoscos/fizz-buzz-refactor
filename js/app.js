@@ -1,24 +1,40 @@
 $(document).ready(function() {
 	console.log("ready freddy!");
 
-//	listen for user input:
-	$('#user-input-form').submit(function(event) {
+//	listen for click on submit button:
+	$('#user-input-form').on('click', 'button#submit', function() {
 		event.preventDefault();
-		console.log('submit function working');
+		console.log('click event listener working');
+
+		var userInt = $('#user-input').val();
+		console.log(userInt);
 
 	});
 
+//	listen for click on reset button:
+	$('#user-input-form').on('click', 'button#reset', function() {
+		console.log('reset button was clicked');
+	});
 
-//	function to parse input string into integer: parseInt()
-	
-	
+
+//	convert user input value from string to number
+	function changeStringToInt () {
+		
+	}
+
+
+//	validate user input with: parseInt()
+//	function checkUserInput()
+//		var userNumber = parseInt()
+
+
 
 // 	function to run fizzbuzz
-	function runFizzBuzz(userNumber) {
-		for (var i = 1; i <= 100; i++) {
+//	function runFizzBuzz(userNumber) {
+//		for (var i = 1; i <= 100; i++) {
 
 
-
+	//	fizzbuzz:
 			// if number divided by both 3 and 5
 			if ((i % 3 === 0) && (i % 5 === 0)) {
 				$('.container').append('fizz buzz');
@@ -42,8 +58,8 @@ $(document).ready(function() {
 				$('.container').append(i);
 				$('.container').append('</br>');
 			}
-		}
-	};
+//		}
+//	};
 
 
 });
