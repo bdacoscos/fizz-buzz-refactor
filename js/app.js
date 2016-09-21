@@ -1,3 +1,5 @@
+'use strict'
+
 $(document).ready(function() {
 	console.log("ready freddy!");
 
@@ -5,11 +7,12 @@ $(document).ready(function() {
 	$('#user-input-form').on('click', 'button#submit', function() {
 		event.preventDefault();
 		console.log('click event listener working');
-
-		var userInt = $('#user-input').val();
-		console.log(userInt);
-
 	});
+
+
+	var userInput = $('#user-input').val();
+	console.log(userInput);
+
 
 //	listen for click on reset button:
 	$('#user-input-form').on('click', 'button#reset', function() {
@@ -18,9 +21,12 @@ $(document).ready(function() {
 
 
 //	convert user input value from string to number
-	function changeStringToInt () {
-		
-	}
+	function changeStringToInt(parameter1) {
+		var userInt = '+' + userInt;
+	};
+
+	changeStringToInt(userInput);
+	console.log(userInput);
 
 
 //	validate user input with: parseInt()
