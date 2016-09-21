@@ -1,5 +1,3 @@
-'use strict'
-
 $(document).ready(function() {
 	console.log("ready freddy!");
 
@@ -7,40 +5,18 @@ $(document).ready(function() {
 	$('#user-input-form').on('click', 'button#submit', function() {
 		event.preventDefault();
 		console.log('click event listener working');
-	});
 
+	//	take input value and convert to integer:
+		var number = +$('#user-input').val();
+		console.log(number);
 
-	var userInput = $('#user-input').val();
-	console.log(userInput);
-
-
-//	listen for click on reset button:
-	$('#user-input-form').on('click', 'button#reset', function() {
-		console.log('reset button was clicked');
-	});
-
-
-//	convert user input value from string to number
-	function changeStringToInt(parameter1) {
-		var userInt = '+' + userInt;
-	};
-
-	changeStringToInt(userInput);
-	console.log(userInput);
-
-
-//	validate user input with: parseInt()
-//	function checkUserInput()
-//		var userNumber = parseInt()
-
+	runFizzBuzz(number);
 
 
 // 	function to run fizzbuzz
-//	function runFizzBuzz(userNumber) {
-//		for (var i = 1; i <= 100; i++) {
+	function runFizzBuzz(someNumber) {
+		for (var i = 1; i <= number; i++) {
 
-
-	//	fizzbuzz:
 			// if number divided by both 3 and 5
 			if ((i % 3 === 0) && (i % 5 === 0)) {
 				$('.container').append('fizz buzz');
@@ -64,8 +40,9 @@ $(document).ready(function() {
 				$('.container').append(i);
 				$('.container').append('</br>');
 			}
-//		}
-//	};
+		}
+	};
 
+})
 
 });
